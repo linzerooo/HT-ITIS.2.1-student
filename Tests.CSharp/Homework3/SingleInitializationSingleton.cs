@@ -5,7 +5,9 @@ public class SingleInitializationSingleton
     public const int DefaultDelay = 3_000;
     private static readonly object Locker = new();
 
-    private static volatile bool _isInitialized = false;
+    private static volatile bool _isInitialized;
+
+    private static Lazy<SingleInitializationSingleton> _value;
 
     private SingleInitializationSingleton(int delay = DefaultDelay)
     {
@@ -16,15 +18,19 @@ public class SingleInitializationSingleton
 
     public int Delay { get; }
 
-    public static SingleInitializationSingleton Instance => throw new NotImplementedException();
+    public static SingleInitializationSingleton Instance => _value.Value;
 
     internal static void Reset()
     {
-        throw new NotImplementedException();
+        _value =
+            new Lazy<SingleInitializationSingleton>(() => new SingleInitializationSingleton());
+        _isInitialized = false;
     }
 
     public static void Initialize(int delay)
     {
-        throw new NotImplementedException();
+        if (_isInitialized) throw new InvalidOperationException("already initialized");
+        _value = new Lazy<SingleInitializationSingleton>(() => new SingleInitializationSingleton(delay));
+        _isInitialized = true;
     }
 }
