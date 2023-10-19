@@ -36,6 +36,9 @@ EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Hw6", "Homework6\Hw6\Hw6.fsproj", "{DBFF318E-C165-4CF3-B88E-CCF9A10D8730}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Homework6", "Homework6", "{AE1440FB-9A01-4A1C-8271-EF37A4FB668E}"
+	ProjectSection(SolutionItems) = preProject
+		Program.fs = Program.fs
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hw7", "Homework7\Hw7\Hw7.csproj", "{35E1F904-309D-4861-9852-40B41586EB33}"
 EndProject
