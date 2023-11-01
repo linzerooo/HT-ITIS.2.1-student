@@ -93,32 +93,3 @@ public static class HtmlHelperExtensions
     
     private static string SeparateName(string name) => Regex.Replace(name,"(?<=[a-z])([A-Z])", " $1", RegexOptions.Compiled);
 } 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
