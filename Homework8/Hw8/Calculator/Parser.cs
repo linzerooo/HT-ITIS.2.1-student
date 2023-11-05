@@ -9,7 +9,6 @@ public class Parser
         out Operation operation,
         out double val2)
     {
-        
         if (double.TryParse(args[0],NumberStyles.Any, CultureInfo.InvariantCulture,  out val1) && double.TryParse(args[2],NumberStyles.Any, CultureInfo.InvariantCulture,  out val2) ) //
         {
             operation = ParseOperation(args[1]);

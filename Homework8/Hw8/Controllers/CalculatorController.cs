@@ -23,7 +23,7 @@ public class CalculatorController : Controller
                 Operation.Minus => calculator.Minus(value1, value2),
                 Operation.Multiply => calculator.Multiply(value1, value2),
                 Operation.Divide => value2 != 0 ? calculator.Divide(value1, value2) : this.Content(Messages.DivisionByZeroMessage),
-                Operation.Invalid => this.Content(Messages.InvalidOperationMessage)
+                _ => this.Content(Messages.InvalidOperationMessage),
             };
         }
         catch (ArgumentException)
