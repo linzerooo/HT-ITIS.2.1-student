@@ -30,12 +30,6 @@ public class CalculatorController : Controller
         {
             return this.Content(Messages.InvalidNumberMessage);
         }
-        catch
-        {
-            return this.Content(Messages.InvalidOperationMessage);
-        }
-
-
     }
     
     [ExcludeFromCodeCoverage]
