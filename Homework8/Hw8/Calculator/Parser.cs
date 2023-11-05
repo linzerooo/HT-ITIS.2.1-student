@@ -1,4 +1,6 @@
-﻿namespace Hw8.Calculator;
+﻿using System.Globalization;
+
+namespace Hw8.Calculator;
 
 public class Parser
 {
@@ -8,7 +10,7 @@ public class Parser
         out double val2)
     {
         
-        if (double.TryParse(args[0], out val1) && double.TryParse(args[2], out val2) ) //
+        if (double.TryParse(args[0],NumberStyles.Any, CultureInfo.InvariantCulture,  out val1) && double.TryParse(args[2],NumberStyles.Any, CultureInfo.InvariantCulture,  out val2) ) //
         {
             operation = ParseOperation(args[1]);
         }
