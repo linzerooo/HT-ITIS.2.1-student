@@ -17,7 +17,7 @@ public class ExpressionTreeVisitor : ExpressionVisitor
                 Expression.Constant(result[1])),
             ExpressionType.Multiply => Expression.Multiply(Expression.Constant(result[0]),
                 Expression.Constant(result[1])),
-            ExpressionType.Divide => result[1] == 0
+            ExpressionType.Divide => result[1] < double.Epsilon
                 ? throw new Exception(MathErrorMessager.DivisionByZero)
                 : Expression.Divide(Expression.Constant(result[0]), Expression.Constant(result[1])),
             _ =>  throw new Exception()
