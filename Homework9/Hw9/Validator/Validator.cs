@@ -1,8 +1,10 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Text.RegularExpressions;
 using Hw9.ErrorMessages;
 
 namespace Hw9.Validator;
 
+    [ExcludeFromCodeCoverage]
     public class Validator
     {
         private static readonly Regex Delimiters = new("(?<=[-+*/()])|(?=[-+*/()])");
