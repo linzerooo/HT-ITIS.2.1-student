@@ -1,4 +1,5 @@
 ﻿using System.Linq.Expressions;
+using Hw9.ErrorMessages;
 using static Hw9.ErrorMessages.MathErrorMessager;
 
 namespace Hw9.Services.Expressions;
@@ -17,8 +18,9 @@ public class ExpressionTreeVisitor : ExpressionVisitor
             ExpressionType.Multiply => Expression.Multiply(Expression.Constant(result[0]),
                 Expression.Constant(result[1])),
             ExpressionType.Divide => result[1] == 0
-                ? throw new Exception(DivisionByZero)
-                : Expression.Divide(Expression.Constant(result[0]), Expression.Constant(result[1]))
+                ? throw new Exception(MathErrorMessager.DivisionByZero)
+                : Expression.Divide(Expression.Constant(result[0]), Expression.Constant(result[1])),
+            _ =>  throw new Exception()
         };
     }
 
