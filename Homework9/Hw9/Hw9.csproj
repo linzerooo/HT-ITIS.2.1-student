@@ -11,4 +11,7 @@
       <_ContentIncludedByDefault Remove="Views\Home\Privacy.cshtml" />
     </ItemGroup>
 
+
+
+
 </Project>
