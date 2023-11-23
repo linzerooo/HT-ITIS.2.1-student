@@ -1,9 +1,11 @@
-﻿using System.Linq.Expressions;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Linq.Expressions;
 using Hw9.ErrorMessages;
 using static Hw9.ErrorMessages.MathErrorMessager;
 
 namespace Hw9.Services.Expressions;
 
+[ExcludeFromCodeCoverage]
 public class ExpressionTreeVisitor : ExpressionVisitor
 {
     protected override Expression VisitBinary(BinaryExpression root)
