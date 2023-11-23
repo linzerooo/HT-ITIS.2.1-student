@@ -1,7 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Diagnostics.CodeAnalysis;
+using Microsoft.EntityFrameworkCore;
 
 namespace Hw10.DbModels;
-
+[ExcludeFromCodeCoverage]
 public class ApplicationContext: DbContext
 {
 	public DbSet<SolvingExpression> SolvingExpressions => Set<SolvingExpression>();
