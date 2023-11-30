@@ -32,5 +32,5 @@ public sealed class MathExpressionVisitor
         Visit(node.Operand);
     }
 
-    // private void Visit(ConstantExpression node)    {    }
+    private void Visit(ConstantExpression node)    {    }
 }
