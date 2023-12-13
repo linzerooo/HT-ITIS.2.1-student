@@ -74,13 +74,10 @@ let webApp =
     
 type Startup() =
     member _.ConfigureServices (services : IServiceCollection) = 
-    services.AddGiraffe().AddMiniProfiler(fun option -> option.RouteBasePath <- "/profiler") 
-    |> ignore
+    services.AddGiraffe().AddMiniProfiler(fun option -> option.RouteBasePath <- "/profiler")  |> ignore
 
     member _.Configure (app : IApplicationBuilder) (_ : IHostEnvironment) (_ : ILoggerFactory) =
-        app
-        .UseMiniProfiler()
-            .UseGiraffe webApp
+        app.UseMiniProfiler().UseGiraffe webApp
         
 [<EntryPoint>]
 let main _ =
