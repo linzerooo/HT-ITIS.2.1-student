@@ -15,6 +15,8 @@ public class Program
 
         builder.Services.AddScoped<ICalculator, Calculator.Calculator>();
 
+        builder.Services.AddMiniProfiler(options => options.RouteBasePath = "/profiler");
+
         var app = builder.Build();
 
         if (!app.Environment.IsDevelopment())
@@ -23,6 +25,7 @@ public class Program
             app.UseHsts();
         }
 
+        app.UseMiniProfiler();
         app.UseHttpsRedirection();
         app.UseStaticFiles();
 
